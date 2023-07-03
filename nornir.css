@@ -1,0 +1,425 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #202020;
+  font-family: "Noto Serif JP", serif;
+}
+/*ハンバーガーメニューを押すと現れるメニュー*/
+.menu {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100%;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: left 0.7s ease-out;
+  z-index: 998;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-left: 60px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+}
+
+.header__top {
+  position: relative;
+  text-align: center;
+  padding: 24px 60px;
+  display: inline-block;
+  position: fixed;
+  z-index: 995;
+  margin-inline: auto;
+  width: 100%;
+  background-color: transparent; /* 初期状態の背景色 */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.header__top.change-background {
+  background-color: white; /* change-background クラスが追加されたとき、背景色は白になります */
+  opacity: 0.9;
+}
+
+.header__icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*ハンバーガーメニュー*/
+.hamburder-manu:hover .hamburder-manu__2 {
+  color: red;
+}
+
+.hamburger-menu {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  position: fixed;
+  top: 8px;
+  left: 60px;
+  z-index: 1000;
+}
+
+.hamburder-manu__1 {
+  display: block;
+  content: "";
+  background-color: #202020;
+  width: 45px;
+  height: 2px;
+  position: absolute;
+  top: 25%;
+  transition: all 0.8s ease;
+}
+
+.hamburder-manu__2 {
+  display: block;
+  content: "";
+  background-color: #202020;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transition: all 0.8s ease;
+}
+
+.hamburder-manu__3 {
+  display: block;
+  content: "";
+  background-color: #202020;
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  top: 75%;
+  transition: all 0.8s ease;
+}
+
+/* ハンバーガーメニューを押した時のcss */
+.hamburger-menu.active .hamburder-manu__1 {
+  transform: rotate(45deg);
+  top: 50%;
+  background-color: white;
+}
+
+.hamburger-menu.active .hamburder-manu__2 {
+  opacity: 0;
+  background-color: white;
+}
+
+.hamburger-menu.active .hamburder-manu__3 {
+  transform: rotate(-45deg);
+  top: 50%;
+  width: 45px;
+  background-color: white;
+}
+
+.navi__link {
+  margin-left: 24px;
+}
+
+.navi__link img {
+  max-width: 100%;
+  transition: filter 0.7s ease-in-out;
+}
+
+.change-color .navi__link--img {
+  filter: invert(1) brightness(12%) saturate(2);
+}
+
+.navi__link--img:hover {
+  opacity: 0.7;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.main-visual {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(./nornir_img/main-visual.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  margin-bottom: 100px;
+  position: relative;
+}
+.text-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-left: 40px;
+}
+
+.main-visual__letter {
+  color: white;
+  font-size: 9rem;
+  letter-spacing: 8rem;
+  text-align: center;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.container {
+  margin-inline: auto;
+  text-align: center;
+  max-width: 960px;
+}
+
+.subtitle {
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: 1.2rem;
+  margin-bottom: 8px;
+  opacity: 0;
+}
+
+.title-description {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 70px;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.about {
+  margin-bottom: 120px;
+}
+
+.about__catchcopy {
+  font-size: 3.2rem;
+  letter-spacing: 0.4rem;
+  margin-bottom: 56px;
+}
+
+.about__catchcopy--color {
+  color: #5ac1ae;
+  font-size: 3.6rem;
+}
+
+.about__text {
+  font-size: 1.6rem;
+  padding-bottom: 28px;
+  letter-spacing: 0.16rem;
+  line-height: 3.2rem;
+}
+
+.topic {
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+/*==================================================
+  スライダーのためのcss
+  ===================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.slider img {
+  width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height: auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8); /*左右の画像のサイズを80%に*/
+  transition: all 0.5s; /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5; /*透過50%*/
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1); /*中央の画像のサイズだけ等倍に*/
+  opacity: 1; /*透過なし*/
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute; /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer; /*マウスカーソルを指マークに*/
+  outline: none; /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666; /*矢印の色*/
+  border-right: 2px solid #666; /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px; /*ドットボタンのサイズ*/
+  height: 8px; /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #ccc; /*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button {
+  background: #333; /*ドットボタンの現在地表示の色*/
+}
+
+.viewmore {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.viewmore p {
+  color: #666;
+  font-size: 1.2rem;
+  padding-right: 8px;
+  margin-left: 24px;
+}
+
+.viewmore img {
+  max-width: 100%;
+}
+
+.item {
+  margin-bottom: 120px;
+}
+
+.item__lists {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.item__list img {
+  max-width: 100%;
+}
+
+.item__list:hover {
+  opacity: 0.8;
+  transition: all 0.8s ease;
+  color: white;
+}
+
+footer {
+  background-color: #639088;
+  font-size: 1.4rem;
+  color: white;
+  padding: 0 64px;
+}
+
+.footer__contents {
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "area1 area2 area3"
+    "area4 area4 area4";
+}
+
+.footer__logo {
+  grid-area: area1;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer__logo img {
+  max-width: 150px;
+}
+
+.footer__company {
+  grid-area: area2;
+  line-height: 3.2rem;
+  border-left: 1px solid white;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.footer__info {
+  grid-area: area3;
+  line-height: 3.2rem;
+  border-left: 1px solid white;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  grid-area: area4;
+  margin-top: 30px;
+  padding-top: 30px;
+  text-align: center;
+  border-top: 1px solid white;
+  letter-spacing: 0.8rem;
+}

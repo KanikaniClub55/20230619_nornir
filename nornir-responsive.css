@@ -1,0 +1,80 @@
+@media (max-width: 768px) {
+  .header__top {
+    padding: 24px 5%;
+  }
+
+  .hamburger-menu {
+    left: 5%;
+  }
+
+  .text-container {
+    margin-left: 16px;
+  }
+
+  .main-visual__letter {
+    font-size: 5rem;
+    letter-spacing: 3.5rem;
+  }
+
+  .container {
+    padding: 0 5%;
+  }
+
+  .subtitle {
+    font-size: 3rem;
+  }
+
+  .title-description {
+    margin-bottom: 50px;
+  }
+
+  .about__catchcopy {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .about__catchcopy--color {
+    font-size: 2.4rem;
+  }
+
+  .about__text {
+    font-size: 1.3rem;
+    padding-bottom: 24px;
+    line-height: 3rem;
+  }
+
+  .slider img {
+    width: 100vw;
+  }
+
+  .slider .slick-slide {
+    transform: scale(0); /*左右の画像を表示しない*/
+  }
+
+  .slider .slick-slide.slick-center {
+    transform: scale(1.3); /*中央の画像のサイズだけ等倍に*/
+  }
+
+  /*矢印の設定*/
+
+  /*戻る、次へ矢印の位置*/
+  .slick-prev,
+  .slick-next {
+    top: 95%;
+    height: 7px;
+    width: 7px;
+  }
+
+  .slick-prev {
+    left: 1.5%; /*戻る矢印の位置と形状*/
+  }
+
+  .slick-next {
+    right: 1.5%; /*次へ矢印の位置と形状*/
+  }
+
+  .item__lists {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
